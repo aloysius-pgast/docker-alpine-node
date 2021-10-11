@@ -1,5 +1,5 @@
 #!/bin/bash
-ARCH=`uname -a | awk '{print $13}'`
+ARCH=`uname -m`
 if ! [[ "$ARCH" == armv* ]]
 then
     echo "Script should be run on an armv architecture"
