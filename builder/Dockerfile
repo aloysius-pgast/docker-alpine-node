@@ -1,2 +1,2 @@
-FROM alpine:edge
-RUN apk --update add bash git python build-base nodejs nodejs-npm
+FROM alpine:3.14
+RUN apk --update add bash git python3 build-base nodejs npm

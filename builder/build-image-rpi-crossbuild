@@ -1,4 +1,11 @@
 #!/bin/bash
 DOCKERFILE=Dockerfile-rpi-crossbuild
 TAG=rpi-builder-latest
+TARGET_ARCH=linux/arm/v7
+BUILDER=$(docker buildx ls | grep -o "${TARGET_ARCH}")
+if [ -z ${BUILDER} ]
+then
+    echo "No docker builder found for '${TARGET_ARCH}'. Please ensure 'docker buildx' is configured properly"
+    exit 1
+fi
 docker build -f $DOCKERFILE --pull --force-rm=true --rm=true -t apendergast/alpine-node:$TAG .

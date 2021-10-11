@@ -1,4 +1,2 @@
-FROM resin/armhf-alpine:edge
-RUN [ "cross-build-start" ]
-RUN apk --update add bash git python build-base nodejs nodejs-npm
-RUN [ "cross-build-end" ]
+FROM arm32v7/alpine:3.14.0
+RUN apk --update add bash git python3 build-base nodejs npm

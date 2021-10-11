@@ -1,4 +1,2 @@
-FROM resin/armhf-alpine:edge
-RUN [ "cross-build-start" ]
+FROM arm32v7/alpine:3.14.0
 RUN apk --update add nodejs openssl
-RUN [ "cross-build-end" ]
